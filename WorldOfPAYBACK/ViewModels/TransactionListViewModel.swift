@@ -11,26 +11,20 @@ class TransactionListViewModel: ObservableObject {
     
     private let networkService: TransactionServiceProtocol
     private var allItems: [TransactionItemViewModel] = []
-
+    
     @Published var filteredItems: [TransactionItemViewModel] = []
     @Published var error: NetworkingError?
     @Published var isLoading = true
     
+    @Published var totalAmount: Decimal = 0
+    
     @Published var allCategories: [Category] = []
     @Published var selectedCategory: Category? {
         didSet {
-            guard let selected = selectedCategory else {
-                return
-            }
-            
-            if selected.categoryName == Category.all.categoryName {
-                filteredItems = allItems
-            } else {
-                filteredItems = allItems.filter { $0.category == selected.value }
-            }
+            updateFilteredData()
         }
     }
-        
+    
     init(networkService: TransactionServiceProtocol = TransactionService(MockURLSession())) {
         self.networkService = networkService
     }
@@ -74,5 +68,32 @@ class TransactionListViewModel: ObservableObject {
         allCategories.append(contentsOf: categories)
         
         selectedCategory = allCategories.first
+    }
+    
+    private func updateFilteredData()  {
+        guard let selectedCategory = selectedCategory else {
+            return
+        }
+        
+        // Filter might be expensive for large data, perform in background
+        DispatchQueue.global().async { [self] in
+            
+            var filteredItems: [TransactionItemViewModel] = []
+            
+            if selectedCategory.categoryName == Category.all.categoryName {
+                filteredItems = self.allItems
+            } else {
+                filteredItems = self.allItems.filter { $0.category == selectedCategory.value }
+            }
+            
+            let amount = filteredItems.reduce(0) { result, item in
+                return result + item.amount
+            }
+            
+            DispatchQueue.main.sync {
+                self.filteredItems = filteredItems
+                self.totalAmount = amount
+            }
+        }
     }
 }

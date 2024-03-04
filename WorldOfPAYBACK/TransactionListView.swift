@@ -47,16 +47,21 @@ struct ListView: View {
                 
                 List(viewModel.filteredItems, id: \.self) { itemViewModel in
                     TransactionItem(viewModel: itemViewModel)
+                        .modifier(ShadowCardModifier())
+                        .listRowSeparator(.hidden)
                 }
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        HStack {
-                            Text("Transactions")
-                                .fontWeight(.bold)
-                                .font(.title)
-                            Spacer()
-                        }
+                .listStyle(.plain)
+                
+                TransactionSumView
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Text("Transactions")
+                            .fontWeight(.bold)
+                            .font(.title)
+                        Spacer()
                     }
                 }
             }
@@ -79,43 +84,32 @@ struct ListView: View {
             .padding(.horizontal, 10)
         }
     }
-}
-
-struct TransactionItem: View {
-    let viewModel: TransactionItemViewModel
     
-    var body: some View {
-        
-        let detailViewModel = TransactionDetailViewModel(displayName: viewModel.partnerDisplayName,
-                                                         description: viewModel.description)
-        let detailView = TransactionDetailView(viewModel: detailViewModel)
-        
-        NavigationLink(destination: detailView) {
-            VStack {
-                Text("Partner Name: \(viewModel.partnerDisplayName)")
-                Text("Amount: \(viewModel.amount) \(viewModel.currency)")
-                Text("Desc: \(viewModel.description ?? "-")")
-                
-                Text("\(viewModel.bookingDate) Category: \(viewModel.category)")
-                Text("Category: \(viewModel.category)")
-            }
+    private var TransactionSumView: some View {
+        HStack {
+            Text("Total Amount: ")
+                .font(.system(size: 26, weight: .regular, design: .default))
+
+            Spacer()
+            let totalAmount = "\(viewModel.totalAmount)"
+            Text(totalAmount)
+            .font(.system(size: 26, weight: .bold, design: .default))
         }
+        .padding()
+        .background(.brown)
     }
 }
 
-struct TransactionDetailView: View {
-    
-    let viewModel: TransactionDetailViewModel
-    
-    var body: some View {
-        VStack {
-            Text("Partner Display Name: \(viewModel.partnerDisplayName)")
-            if let description = viewModel.description {
-                Text("\nTransaction Desctiption: \(description)")
-            }
-        }
+struct ShadowCardModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .background(Rectangle().fill(Color.white))
+            .cornerRadius(10)
+            .shadow(color: .gray, radius: 3, x: 2, y: 2)
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

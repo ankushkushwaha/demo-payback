@@ -9,7 +9,7 @@ import Foundation
 
 struct TransactionItemViewModel: Hashable {
     let id = UUID()
-    let amount: Int
+    let amount: Decimal
     let currency: String
     let category: Int
     let partnerDisplayName: String
