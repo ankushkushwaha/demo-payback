@@ -15,7 +15,6 @@
 		46AED9522B909CFC00FF239E /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 46AED9512B909CFC00FF239E /* MockData.json */; };
 		46B1A1062B90C48E007D9903 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1A1052B90C48E007D9903 /* TransactionListViewModel.swift */; };
 		46B1A1082B90C526007D9903 /* TransactionItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1A1072B90C526007D9903 /* TransactionItemViewModel.swift */; };
-		46B1A10A2B90C550007D9903 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1A1092B90C550007D9903 /* User.swift */; };
 		46B1A10C2B90C60F007D9903 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1A10B2B90C60E007D9903 /* NetworkService.swift */; };
 		46B1A10E2B90C763007D9903 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1A10D2B90C763007D9903 /* URLSession.swift */; };
 		46B1A1122B90C83F007D9903 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1A1112B90C83F007D9903 /* Errors.swift */; };
@@ -39,7 +38,6 @@
 		46AED9512B909CFC00FF239E /* MockData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; };
 		46B1A1052B90C48E007D9903 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
 		46B1A1072B90C526007D9903 /* TransactionItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItemViewModel.swift; sourceTree = "<group>"; };
-		46B1A1092B90C550007D9903 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		46B1A10B2B90C60E007D9903 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		46B1A10D2B90C763007D9903 /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
 		46B1A1112B90C83F007D9903 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
@@ -66,6 +64,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4660D1E72B95A727003979E8 /* Codables */ = {
+			isa = PBXGroup;
+			children = (
+				46B1A11A2B91B409007D9903 /* TransactionListModel.swift */,
+				46B1A1192B91B408007D9903 /* TransactionModel.swift */,
+				46B1A11C2B91B409007D9903 /* TransactionDetail.swift */,
+				46B1A11B2B91B409007D9903 /* Value.swift */,
+			);
+			path = Codables;
+			sourceTree = "<group>";
+		};
 		46AED9372B909BA200FF239E = {
 			isa = PBXGroup;
 			children = (
@@ -89,7 +98,6 @@
 				46AED9452B909BA200FF239E /* TransactionListView.swift */,
 				46B1A1262B91D6FF007D9903 /* ErrorView.swift */,
 				46B1A1232B91C14A007D9903 /* ViewModels */,
-				46B1A1092B90C550007D9903 /* User.swift */,
 				46B1A1182B91B3E4007D9903 /* Models */,
 				46B1A1172B91AFB8007D9903 /* Network */,
 				46B1A1112B90C83F007D9903 /* Errors.swift */,
@@ -115,8 +123,8 @@
 				46B1A10D2B90C763007D9903 /* URLSession.swift */,
 				46B1A10B2B90C60E007D9903 /* NetworkService.swift */,
 				46B1A1152B91AC85007D9903 /* TransactionService.swift */,
-				46B1A1242B91C197007D9903 /* MockServerSession.swift */,
 				46B1A12A2B91FEC7007D9903 /* NetworkMonitor.swift */,
+				46B1A1242B91C197007D9903 /* MockServerSession.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -124,10 +132,7 @@
 		46B1A1182B91B3E4007D9903 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				46B1A11A2B91B409007D9903 /* TransactionListModel.swift */,
-				46B1A1192B91B408007D9903 /* TransactionModel.swift */,
-				46B1A11C2B91B409007D9903 /* TransactionDetail.swift */,
-				46B1A11B2B91B409007D9903 /* Value.swift */,
+				4660D1E72B95A727003979E8 /* Codables */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -221,7 +226,6 @@
 				46B1A1252B91C197007D9903 /* MockServerSession.swift in Sources */,
 				46B1A10C2B90C60F007D9903 /* NetworkService.swift in Sources */,
 				46B1A10E2B90C763007D9903 /* URLSession.swift in Sources */,
-				46B1A10A2B90C550007D9903 /* User.swift in Sources */,
 				46AED9462B909BA200FF239E /* TransactionListView.swift in Sources */,
 				46B1A1062B90C48E007D9903 /* TransactionListViewModel.swift in Sources */,
 				46B1A11F2B91B409007D9903 /* TransactionListModel.swift in Sources */,
