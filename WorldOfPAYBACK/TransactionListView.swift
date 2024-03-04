@@ -31,6 +31,7 @@ struct TransactionListView: View {
         .task {
             await viewModel.fetchTransactions()
         }
+        
     }
 }
 
@@ -41,24 +42,45 @@ struct ListView: View {
     var body: some View {
         
         NavigationView {
-            
-            List(viewModel.items, id: \.self) { itemViewModel in
-                ListItem(viewModel: itemViewModel)
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    HStack {
-                        Text("Transactions")
-                            .fontWeight(.bold)
-                            .font(.title)
-                        Spacer()
+            VStack {
+                
+                CategorySelectionPicker
+                
+                List(viewModel.items, id: \.self) { itemViewModel in
+                    ListItem(viewModel: itemViewModel)
+                }
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        HStack {
+                            Text("Transactions")
+                                .fontWeight(.bold)
+                                .font(.title)
+                            Spacer()
+                        }
                     }
                 }
             }
         }
     }
     
+    private var CategorySelectionPicker: some View {
+        HStack {
+            Text("Choose Category: ")
+            Spacer()
+            Picker("Choose Category:", selection: $viewModel.selectedCategory) {
+                ForEach(viewModel.allCategories, id: \.self) { category in
+                    Text("\(category.categoryName)").tag(Category?.some(category))
+                }
+            }
+            .frame(minWidth: 50)
+            .pickerStyle(MenuPickerStyle())
+            .padding(.horizontal, 10)
+            .border(.gray)
+            .padding(.horizontal, 10)
+        }
+        
+    }
 }
 
 struct ListItem: View {
@@ -73,7 +95,6 @@ struct ListItem: View {
                 Text("\(viewModel.bookingDate)")
             }
         }
-        
     }
 }
 

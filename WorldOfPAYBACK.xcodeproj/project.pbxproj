@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4660D1E42B92139A003979E8 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 4660D1E32B92139A003979E8 /* Reachability */; };
+		4660D1E62B95A6BC003979E8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660D1E52B95A6BB003979E8 /* Category.swift */; };
 		46AED9442B909BA200FF239E /* WorldOfPAYBACKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AED9432B909BA200FF239E /* WorldOfPAYBACKApp.swift */; };
 		46AED9462B909BA200FF239E /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AED9452B909BA200FF239E /* TransactionListView.swift */; };
 		46AED9482B909BA900FF239E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46AED9472B909BA900FF239E /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4660D1E52B95A6BB003979E8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		46AED9402B909BA200FF239E /* WorldOfPAYBACK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldOfPAYBACK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46AED9432B909BA200FF239E /* WorldOfPAYBACKApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPAYBACKApp.swift; sourceTree = "<group>"; };
 		46AED9452B909BA200FF239E /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				4660D1E72B95A727003979E8 /* Codables */,
+				4660D1E52B95A6BB003979E8 /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				46B1A10C2B90C60F007D9903 /* NetworkService.swift in Sources */,
 				46B1A10E2B90C763007D9903 /* URLSession.swift in Sources */,
 				46AED9462B909BA200FF239E /* TransactionListView.swift in Sources */,
+				4660D1E62B95A6BC003979E8 /* Category.swift in Sources */,
 				46B1A1062B90C48E007D9903 /* TransactionListViewModel.swift in Sources */,
 				46B1A11F2B91B409007D9903 /* TransactionListModel.swift in Sources */,
 				46B1A11E2B91B409007D9903 /* TransactionModel.swift in Sources */,

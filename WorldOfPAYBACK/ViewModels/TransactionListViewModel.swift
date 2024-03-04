@@ -13,6 +13,13 @@ class TransactionListViewModel: ObservableObject {
     @Published var error: NetworkingError?
     @Published var isLoading = true
     
+    @Published var selectedCategory: Category? {
+        didSet {
+            print(selectedCategory)
+        }
+    }
+    @Published var allCategories: [Category] = []
+
     private let networkService: TransactionServiceProtocol
     
     init(networkService: TransactionServiceProtocol = TransactionService(MockURLSession())) {
@@ -34,6 +41,8 @@ class TransactionListViewModel: ObservableObject {
             
             items = transactionItemViewModels
             
+            setupCategories()
+            
         case .failure(let err):
             print(err)
             // set custom NetworkingError for better user experience.
@@ -43,8 +52,13 @@ class TransactionListViewModel: ObservableObject {
         isLoading = false
     }
     
-    private func categories() {
+    private func setupCategories() {
         
+        let groupedItems = Dictionary(grouping: items, by: { $0.category })
+       allCategories = Array(groupedItems.keys).map { key in
+           Category(value: key)
+       }.sorted { $0.value < $1.value }
+        selectedCategory = allCategories.first
     }
     
 }
