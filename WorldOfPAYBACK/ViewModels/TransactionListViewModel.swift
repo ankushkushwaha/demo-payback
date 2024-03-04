@@ -9,17 +9,26 @@ import Foundation
 
 class TransactionListViewModel: ObservableObject {
     
-    @Published var items: [TransactionItemViewModel] = []
+    @Published var filteredItems: [TransactionItemViewModel] = []
     @Published var error: NetworkingError?
     @Published var isLoading = true
     
+    @Published var allCategories: [Category] = []
     @Published var selectedCategory: Category? {
         didSet {
-            print(selectedCategory)
+            guard let selected = selectedCategory else {
+                return
+            }
+            
+            if selected.categoryName == Category.all.categoryName {
+                filteredItems = allItems
+            } else {
+                filteredItems = allItems.filter { $0.category == selected.value }
+            }
         }
     }
-    @Published var allCategories: [Category] = []
-
+    
+    private var allItems: [TransactionItemViewModel] = []
     private let networkService: TransactionServiceProtocol
     
     init(networkService: TransactionServiceProtocol = TransactionService(MockURLSession())) {
@@ -39,9 +48,7 @@ class TransactionListViewModel: ObservableObject {
                 TransactionItemViewModel(transactionModel)
             }.sorted { $0.bookingDate > $1.bookingDate }
             
-            items = transactionItemViewModels
-            
-            setupCategories()
+            setupData(transactionItemViewModels)
             
         case .failure(let err):
             print(err)
@@ -52,13 +59,20 @@ class TransactionListViewModel: ObservableObject {
         isLoading = false
     }
     
-    private func setupCategories() {
+    private func setupData(_ itemViewModels: [TransactionItemViewModel]) {
         
-        let groupedItems = Dictionary(grouping: items, by: { $0.category })
-       allCategories = Array(groupedItems.keys).map { key in
-           Category(value: key)
-       }.sorted { $0.value < $1.value }
+        allItems = itemViewModels
+        
+        let groupedItems = Dictionary(grouping: itemViewModels, by: { $0.category })
+        
+        allCategories = [Category.all]
+        
+        let categories = Array(groupedItems.keys).map { key in
+            Category(value: key, categoryName: "\(key)")
+        }.sorted { $0.value < $1.value }
+        
+        allCategories.append(contentsOf: categories)
+        
         selectedCategory = allCategories.first
     }
-    
 }

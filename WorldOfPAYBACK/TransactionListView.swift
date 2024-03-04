@@ -46,7 +46,7 @@ struct ListView: View {
                 
                 CategorySelectionPicker
                 
-                List(viewModel.items, id: \.self) { itemViewModel in
+                List(viewModel.filteredItems, id: \.self) { itemViewModel in
                     ListItem(viewModel: itemViewModel)
                 }
                 .navigationBarTitleDisplayMode(.inline)
@@ -66,8 +66,8 @@ struct ListView: View {
     
     private var CategorySelectionPicker: some View {
         HStack {
-            Text("Choose Category: ")
             Spacer()
+            Text("Choose Category: ")
             Picker("Choose Category:", selection: $viewModel.selectedCategory) {
                 ForEach(viewModel.allCategories, id: \.self) { category in
                     Text("\(category.categoryName)").tag(Category?.some(category))
@@ -93,6 +93,7 @@ struct ListItem: View {
                 Text("Amount: \(viewModel.amount) \(viewModel.currency)")
                 Text("Desc: \(viewModel.description)")
                 Text("\(viewModel.bookingDate)")
+                Text("Category: \(viewModel.category)")
             }
         }
     }

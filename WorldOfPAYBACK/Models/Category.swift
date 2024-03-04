@@ -9,10 +9,11 @@ import Foundation
 
 struct Category: Hashable {
     let value: Int
+    let categoryName: String
 }
 
 extension Category {
-    var categoryName: String {
-        "Category \(value)"
+    static var all: Category {
+        Category(value: Int.max, categoryName: "All")
     }
 }
