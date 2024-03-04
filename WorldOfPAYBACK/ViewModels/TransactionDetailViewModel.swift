@@ -8,7 +8,7 @@
 import Foundation
 
 struct TransactionDetailViewModel {
-    let partnerDisplayName: String?
+    let partnerDisplayName: String
     let description: String?
 
     init(displayName: String, description: String?) {

@@ -9,6 +9,9 @@ import Foundation
 
 class TransactionListViewModel: ObservableObject {
     
+    private let networkService: TransactionServiceProtocol
+    private var allItems: [TransactionItemViewModel] = []
+
     @Published var filteredItems: [TransactionItemViewModel] = []
     @Published var error: NetworkingError?
     @Published var isLoading = true
@@ -27,10 +30,7 @@ class TransactionListViewModel: ObservableObject {
             }
         }
     }
-    
-    private var allItems: [TransactionItemViewModel] = []
-    private let networkService: TransactionServiceProtocol
-    
+        
     init(networkService: TransactionServiceProtocol = TransactionService(MockURLSession())) {
         self.networkService = networkService
     }

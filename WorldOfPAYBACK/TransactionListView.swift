@@ -88,14 +88,15 @@ struct TransactionItem: View {
         
         let detailViewModel = TransactionDetailViewModel(displayName: viewModel.partnerDisplayName,
                                                          description: viewModel.description)
-        let itemDetailView = TransactionDetailView(viewModel: detailViewModel)
+        let detailView = TransactionDetailView(viewModel: detailViewModel)
         
-        NavigationLink(destination: itemDetailView) {
+        NavigationLink(destination: detailView) {
             VStack {
                 Text("Partner Name: \(viewModel.partnerDisplayName)")
                 Text("Amount: \(viewModel.amount) \(viewModel.currency)")
                 Text("Desc: \(viewModel.description ?? "-")")
-                Text("\(viewModel.bookingDate)")
+                
+                Text("\(viewModel.bookingDate) Category: \(viewModel.category)")
                 Text("Category: \(viewModel.category)")
             }
         }
@@ -108,7 +109,7 @@ struct TransactionDetailView: View {
     
     var body: some View {
         VStack {
-            Text("Partner Display Name: \(viewModel.partnerDisplayName ?? "")")
+            Text("Partner Display Name: \(viewModel.partnerDisplayName)")
             if let description = viewModel.description {
                 Text("\nTransaction Desctiption: \(description)")
             }
