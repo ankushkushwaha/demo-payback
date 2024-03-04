@@ -31,7 +31,6 @@ struct TransactionListView: View {
         .task {
             await viewModel.fetchTransactions()
         }
-        
     }
 }
 
@@ -47,7 +46,7 @@ struct ListView: View {
                 CategorySelectionPicker
                 
                 List(viewModel.filteredItems, id: \.self) { itemViewModel in
-                    ListItem(viewModel: itemViewModel)
+                    TransactionItem(viewModel: itemViewModel)
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
@@ -79,21 +78,39 @@ struct ListView: View {
             .border(.gray)
             .padding(.horizontal, 10)
         }
-        
     }
 }
 
-struct ListItem: View {
+struct TransactionItem: View {
     let viewModel: TransactionItemViewModel
     
     var body: some View {
-        NavigationLink(destination: Text("Item \(1)")) {
+        
+        let detailViewModel = TransactionDetailViewModel(displayName: viewModel.partnerDisplayName,
+                                                         description: viewModel.description)
+        let itemDetailView = TransactionDetailView(viewModel: detailViewModel)
+        
+        NavigationLink(destination: itemDetailView) {
             VStack {
                 Text("Partner Name: \(viewModel.partnerDisplayName)")
                 Text("Amount: \(viewModel.amount) \(viewModel.currency)")
-                Text("Desc: \(viewModel.description)")
+                Text("Desc: \(viewModel.description ?? "-")")
                 Text("\(viewModel.bookingDate)")
                 Text("Category: \(viewModel.category)")
+            }
+        }
+    }
+}
+
+struct TransactionDetailView: View {
+    
+    let viewModel: TransactionDetailViewModel
+    
+    var body: some View {
+        VStack {
+            Text("Partner Display Name: \(viewModel.partnerDisplayName ?? "")")
+            if let description = viewModel.description {
+                Text("\nTransaction Desctiption: \(description)")
             }
         }
     }

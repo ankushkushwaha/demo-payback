@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4660D1E42B92139A003979E8 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 4660D1E32B92139A003979E8 /* Reachability */; };
 		4660D1E62B95A6BC003979E8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660D1E52B95A6BB003979E8 /* Category.swift */; };
+		4660D1E92B95CB43003979E8 /* TransactionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660D1E82B95CB43003979E8 /* TransactionDetailViewModel.swift */; };
 		46AED9442B909BA200FF239E /* WorldOfPAYBACKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AED9432B909BA200FF239E /* WorldOfPAYBACKApp.swift */; };
 		46AED9462B909BA200FF239E /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AED9452B909BA200FF239E /* TransactionListView.swift */; };
 		46AED9482B909BA900FF239E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46AED9472B909BA900FF239E /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		4660D1E52B95A6BB003979E8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		4660D1E82B95CB43003979E8 /* TransactionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewModel.swift; sourceTree = "<group>"; };
 		46AED9402B909BA200FF239E /* WorldOfPAYBACK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldOfPAYBACK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46AED9432B909BA200FF239E /* WorldOfPAYBACKApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPAYBACKApp.swift; sourceTree = "<group>"; };
 		46AED9452B909BA200FF239E /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				46B1A1072B90C526007D9903 /* TransactionItemViewModel.swift */,
+				4660D1E82B95CB43003979E8 /* TransactionDetailViewModel.swift */,
 				46B1A1052B90C48E007D9903 /* TransactionListViewModel.swift */,
 			);
 			path = ViewModels;
@@ -236,6 +239,7 @@
 				46B1A11E2B91B409007D9903 /* TransactionModel.swift in Sources */,
 				46B1A12B2B91FEC8007D9903 /* NetworkMonitor.swift in Sources */,
 				46B1A1212B91B409007D9903 /* TransactionDetail.swift in Sources */,
+				4660D1E92B95CB43003979E8 /* TransactionDetailViewModel.swift in Sources */,
 				46B1A1142B90CB9E007D9903 /* EndPoints.swift in Sources */,
 				46B1A1082B90C526007D9903 /* TransactionItemViewModel.swift in Sources */,
 				46B1A1122B90C83F007D9903 /* Errors.swift in Sources */,
