@@ -7,7 +7,17 @@
 
 import Foundation
 
-struct Endpoints {
-    static let url = "https://jsonplaceholder.typicode.com/users/"
+// We can also create custom swift flags and xcconfigs and use those with schemes/targets according to our needs.
 
+struct Endpoints {
+    
+#if DEBUG
+    static let baseURL = "https://api-test.payback.com"
+#else
+    static let baseURL = "https://api.payback.com/"
+#endif
+    
+    static var transactions: String {
+        "\(Self.baseURL)/transactions"
+    }
 }

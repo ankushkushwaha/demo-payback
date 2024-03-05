@@ -23,7 +23,7 @@ struct TransactionService: TransactionServiceProtocol  {
     
     func fetchTransactions() async -> Result<[TransactionModel], Error> {
         
-        guard let url = URL(string: Endpoints.url) else {
+        guard let url = URL(string: Endpoints.transactions) else {
             return .failure(NetworkingError.invalidURL)
         }
                 
