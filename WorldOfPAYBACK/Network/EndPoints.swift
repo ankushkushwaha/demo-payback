@@ -7,7 +7,7 @@
 
 import Foundation
 
-// We can also create custom swift flags and xcconfigs and use those with schemes/targets according to our needs.
+// For complex environment configurations, we can create custom swift flags and xcconfigs and use those with schemes/targets according to our needs.
 
 struct Endpoints {
     
