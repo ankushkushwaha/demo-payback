@@ -10,7 +10,7 @@ import Foundation
 class TransactionListViewModel: ObservableObject {
     
     private let networkService: TransactionServiceProtocol
-    private var allItems: [TransactionItemViewModel] = []
+    private(set) var allItems: [TransactionItemViewModel] = []
     
     @Published var filteredItems: [TransactionItemViewModel] = []
     @Published var error: NetworkingError?
@@ -22,16 +22,14 @@ class TransactionListViewModel: ObservableObject {
     @Published var allCategories: [Category] = []
     @Published var selectedCategory: Category? {
         didSet {
-            setDataForSelctedCategory()
+            Task {
+                await updateSelectedCategoryData()
+            }
         }
     }
     
-    init(networkService: TransactionServiceProtocol = TransactionService(MockURLSession())) {
+    init(_ networkService: TransactionServiceProtocol = TransactionService()) {
         self.networkService = networkService
-        
-        Task {
-            await fetchTransactions()
-        }
     }
     
     @MainActor
@@ -60,7 +58,7 @@ class TransactionListViewModel: ObservableObject {
     
     private func setupData(_ itemViewModels: [TransactionItemViewModel]) {
         isSettingData = true
-
+        
         allItems = itemViewModels
         
         let groupedItems = Dictionary(grouping: itemViewModels, by: { $0.category })
@@ -78,33 +76,38 @@ class TransactionListViewModel: ObservableObject {
         isSettingData = false
     }
     
-    private func setDataForSelctedCategory()  {
+    @MainActor
+    func updateSelectedCategoryData() async {
+        
         guard let selectedCategory = selectedCategory else {
             return
         }
         
         isSettingData = true
         
-        // Filter might be expensive for large data, perform in background
-        DispatchQueue.global().async { [self] in
-            
-            var filteredItems: [TransactionItemViewModel] = []
-            
-            if selectedCategory.categoryName == Category.all.categoryName {
-                filteredItems = self.allItems
-            } else {
-                filteredItems = self.allItems.filter { $0.category == selectedCategory.value }
-            }
-            
-            let amount = filteredItems.reduce(0) { result, item in
-                return result + item.amount
-            }
-            
-            DispatchQueue.main.async {
-                self.filteredItems = filteredItems
-                self.totalAmount = amount
-                isSettingData = false
-            }
+        // Filter might be expensive operation for large data, perform it in background
+        async let (filteredItems, totalAmount) = await setData(for: selectedCategory)
+        
+        self.filteredItems =  await filteredItems
+        self.totalAmount =  await totalAmount
+        
+        isSettingData = false
+    }
+    
+    private func setData(for category: Category) async -> ([TransactionItemViewModel], Decimal) {
+        
+        var filteredItems: [TransactionItemViewModel] = []
+        
+        if category.categoryName == Category.all.categoryName {
+            filteredItems = self.allItems
+        } else {
+            filteredItems = self.allItems.filter { $0.category == category.value }
         }
+        
+        let amount = filteredItems.reduce(0) { result, item in
+            return result + item.amount
+        }
+        
+        return (filteredItems, amount)
     }
 }

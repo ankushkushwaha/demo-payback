@@ -12,7 +12,10 @@ struct WorldOfPAYBACKApp: App {
     
     var body: some Scene {
         WindowGroup {
-            TransactionListView(viewModel: TransactionListViewModel())
+            
+            let mockService = TransactionService(MockURLSession())
+            //Inject fake server into viewModel
+            TransactionListView(viewModel: TransactionListViewModel(mockService))
         }
     }
 }

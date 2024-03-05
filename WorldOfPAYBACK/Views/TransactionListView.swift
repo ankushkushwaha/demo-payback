@@ -31,6 +31,9 @@ struct TransactionListView: View {
                 }
             }
         }
+        .task {
+            await viewModel.fetchTransactions()
+        }
     }
 }
 
