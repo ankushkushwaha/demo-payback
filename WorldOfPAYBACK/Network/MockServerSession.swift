@@ -9,13 +9,20 @@ import Foundation
 
 struct MockURLSession: URLSessionProtocol {
     
+    var error: Error? = nil
+    
     func data(_ request: URLRequest) async throws -> (Data, URLResponse) {
         // write implementation if needed, at present we are not using it in mockServer
         fatalError("Method Implementation missing.")
     }
     
     func data(_ url: URL) async throws -> (Data, URLResponse) {
-        try await mockFetchData(url: url)
+        
+        if let error = error {
+            throw error
+        }
+          
+        return try await mockFetchData(url: url)
     }
         
     private func mockFetchData(url: URL) async throws -> (Data, URLResponse) {
