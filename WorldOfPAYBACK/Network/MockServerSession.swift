@@ -23,8 +23,8 @@ struct MockURLSession: URLSessionProtocol {
         // Simulate fake network delay of 1 second.
         try await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC)
 
-        if let randomElement = (1...10).randomElement(),
-           randomElement % 10 == 0 { // mock error
+        if let randomElement = (1...3).randomElement(),
+           randomElement == 1 { // mock error
             throw DataError.mockDataError
         }
             
