@@ -13,9 +13,9 @@ enum DataError: Error {
     var errorMessage: String {
         switch self {
         case .networkError:
-            return "Could not fetch data. Please try again later."
+            return String(localized: "Could not fetch data. Please try again later.")
         case .mockDataError:
-            return "Could not fetch data from mock json file."
+            return String(localized: "Could not fetch data from mock json file.")
         }
     }
 }
@@ -26,9 +26,9 @@ enum NetworkingError: Error {
     var errorMessage: String {
         switch self {
         case .invalidURL:
-            return "Invalid Url."
+            return String(localized: "Invalid Url")
         case .requestFailed(_):
-            return "Could not fetch data. Please try again later."
+            return String(localized: "Could not fetch data. Please try again later.")
         }
     }
 }

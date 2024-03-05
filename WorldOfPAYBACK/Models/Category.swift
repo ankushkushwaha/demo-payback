@@ -14,6 +14,6 @@ struct Category: Hashable {
 
 extension Category {
     static var all: Category {
-        Category(value: Int.max, categoryName: "All")
+        Category(value: Int.max, categoryName: String(localized: "All"))
     }
 }

@@ -15,7 +15,7 @@ struct TransactionDetailView: View {
         VStack {
             Text("Partner Display Name: \(viewModel.partnerDisplayName)")
             if let description = viewModel.description {
-                Text("\nTransaction Desctiption: \(description)")
+                Text("Transaction Desctiption: \(description)")
             }
         }
     }

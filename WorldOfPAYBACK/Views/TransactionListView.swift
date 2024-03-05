@@ -72,7 +72,7 @@ struct ListView: View {
         HStack {
             Spacer()
             Text("Choose Category: ")
-            Picker("Choose Category:", selection: $viewModel.selectedCategory) {
+            Picker("Choose Category: ", selection: $viewModel.selectedCategory) {
                 ForEach(viewModel.allCategories, id: \.self) { category in
                     Text("\(category.categoryName)").tag(Category?.some(category))
                 }

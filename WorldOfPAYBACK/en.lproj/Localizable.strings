@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  WorldOfPAYBACK
+
+  Created by ankush kushwaha on 05/03/24.
+  
+*/
+// TransactionListView
+
+"No internet connection!" = "No internet connection!";
+"Loading..." = "Loading...";
+"Transactions" = "Transactions";
+"Choose Category: " = "Choose Category: ";
+"Total Amount: " = "Total Amount: ";
+
+//TransactionDetailView
+"Partner Display Name: %@" = "Partner Display Name: %@";
+"Transaction Desctiption: %@" = "Transaction Desctiption: %@";
+
+// ErrorView
+"Error" = "Error";
+"OK" = "OK";
+
+// Category
+"All" = "All";
+
+// Errors
+"Could not fetch data. Please try again later." = "Could not fetch data. Please try again later.";
+"Could not fetch data from mock json file." = "Could not fetch data from mock json file.";
+"Invalid Url" = "Invalid Url";

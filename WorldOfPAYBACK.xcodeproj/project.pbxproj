@@ -14,6 +14,7 @@
 		4660D1EF2B95EBB1003979E8 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660D1EE2B95EBB1003979E8 /* TransactionDetailView.swift */; };
 		467549192B961C1000C79C42 /* DecimalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467549182B961C1000C79C42 /* DecimalExtension.swift */; };
 		4675491B2B96DE2300C79C42 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4675491A2B96DE2200C79C42 /* DateExtension.swift */; };
+		467549222B9717AB00C79C42 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 467549242B9717AB00C79C42 /* Localizable.strings */; };
 		46AED9442B909BA200FF239E /* WorldOfPAYBACKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AED9432B909BA200FF239E /* WorldOfPAYBACKApp.swift */; };
 		46AED9462B909BA200FF239E /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AED9452B909BA200FF239E /* TransactionListView.swift */; };
 		46AED9482B909BA900FF239E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46AED9472B909BA900FF239E /* Assets.xcassets */; };
@@ -42,6 +43,8 @@
 		4660D1EE2B95EBB1003979E8 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 		467549182B961C1000C79C42 /* DecimalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalExtension.swift; sourceTree = "<group>"; };
 		4675491A2B96DE2200C79C42 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		467549232B9717AB00C79C42 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		467549252B9717B000C79C42 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		46AED9402B909BA200FF239E /* WorldOfPAYBACK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldOfPAYBACK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46AED9432B909BA200FF239E /* WorldOfPAYBACKApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPAYBACKApp.swift; sourceTree = "<group>"; };
 		46AED9452B909BA200FF239E /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				46AED9432B909BA200FF239E /* WorldOfPAYBACKApp.swift */,
+				467549242B9717AB00C79C42 /* Localizable.strings */,
 				4675491D2B9715E500C79C42 /* Views */,
 				46B1A1232B91C14A007D9903 /* ViewModels */,
 				46B1A1182B91B3E4007D9903 /* Models */,
@@ -225,6 +229,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 46AED9372B909BA200FF239E;
 			packageReferences = (
@@ -245,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46AED94B2B909BA900FF239E /* Preview Assets.xcassets in Resources */,
+				467549222B9717AB00C79C42 /* Localizable.strings in Resources */,
 				46AED9522B909CFC00FF239E /* MockData.json in Resources */,
 				46AED9482B909BA900FF239E /* Assets.xcassets in Resources */,
 			);
@@ -283,6 +289,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		467549242B9717AB00C79C42 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				467549232B9717AB00C79C42 /* de */,
+				467549252B9717B000C79C42 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		46AED94C2B909BA900FF239E /* Debug */ = {
