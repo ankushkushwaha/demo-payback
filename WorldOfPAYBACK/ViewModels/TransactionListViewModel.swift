@@ -17,7 +17,7 @@ class TransactionListViewModel: ObservableObject {
     @Published var isLoading = true
     @Published var isSettingData = false
     
-    @Published var totalAmount: Decimal = 0
+    @Published var totalAmount: Decimal?
     
     @Published var allCategories: [Category] = []
     @Published var selectedCategory: Category? {
@@ -59,7 +59,8 @@ class TransactionListViewModel: ObservableObject {
     }
     
     private func setupData(_ itemViewModels: [TransactionItemViewModel]) {
-        
+        isSettingData = true
+
         allItems = itemViewModels
         
         let groupedItems = Dictionary(grouping: itemViewModels, by: { $0.category })
@@ -73,6 +74,8 @@ class TransactionListViewModel: ObservableObject {
         allCategories.append(contentsOf: categories)
         
         selectedCategory = allCategories.first
+        
+        isSettingData = false
     }
     
     private func setDataForSelctedCategory()  {
