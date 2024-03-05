@@ -15,6 +15,7 @@ class TransactionListViewModel: ObservableObject {
     @Published var filteredItems: [TransactionItemViewModel] = []
     @Published var error: NetworkingError?
     @Published var isLoading = true
+    @Published var isFiltering = false
     
     @Published var totalAmount: Decimal = 0
     
@@ -75,6 +76,8 @@ class TransactionListViewModel: ObservableObject {
             return
         }
         
+        isFiltering = true
+        
         // Filter might be expensive for large data, perform in background
         DispatchQueue.global().async { [self] in
             
@@ -90,9 +93,10 @@ class TransactionListViewModel: ObservableObject {
                 return result + item.amount
             }
             
-            DispatchQueue.main.sync {
+            DispatchQueue.main.async {
                 self.filteredItems = filteredItems
                 self.totalAmount = amount
+                isFiltering = false
             }
         }
     }

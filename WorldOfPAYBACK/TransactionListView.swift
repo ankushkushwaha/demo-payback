@@ -25,7 +25,10 @@ struct TransactionListView: View {
             } else if let error = viewModel.error {
                 ErrorView(errorMessage: error.errorMessage)
             } else {
-                ListView(viewModel: viewModel)
+                ZStack {
+                    ListView(viewModel: viewModel)
+                    viewModel.isFiltering ? ProgressView() : nil
+                }
             }
         }
         .task {
@@ -89,11 +92,11 @@ struct ListView: View {
         HStack {
             Text("Total Amount: ")
                 .font(.system(size: 26, weight: .regular, design: .default))
-
+            
             Spacer()
             let totalAmount = "\(viewModel.totalAmount)"
             Text(totalAmount)
-            .font(.system(size: 26, weight: .bold, design: .default))
+                .font(.system(size: 26, weight: .bold, design: .default))
         }
         .padding()
         .background(.brown)
