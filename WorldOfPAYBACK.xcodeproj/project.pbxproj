@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46338F932B9731140053B3B6 /* TransactionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46338F922B9731140053B3B6 /* TransactionServiceTests.swift */; };
+		46338F942B9734960053B3B6 /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 46AED9512B909CFC00FF239E /* MockData.json */; };
+		46338F962B973A0D0053B3B6 /* TransactionListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46338F952B973A0D0053B3B6 /* TransactionListViewModelTests.swift */; };
+		46338F982B9750EC0053B3B6 /* TransactionItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46338F972B9750EB0053B3B6 /* TransactionItemViewModelTests.swift */; };
+		46338F9A2B9752C20053B3B6 /* MockModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46338F992B9752C20053B3B6 /* MockModelProvider.swift */; };
+		46338F9C2B9754CA0053B3B6 /* TransactionDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46338F9B2B9754CA0053B3B6 /* TransactionDetailViewModelTests.swift */; };
+		46338FA02B975C630053B3B6 /* MockTestURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46338F9F2B975C630053B3B6 /* MockTestURLSession.swift */; };
 		4660D1E42B92139A003979E8 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 4660D1E32B92139A003979E8 /* Reachability */; };
 		4660D1E62B95A6BC003979E8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660D1E52B95A6BB003979E8 /* Category.swift */; };
 		4660D1E92B95CB43003979E8 /* TransactionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660D1E82B95CB43003979E8 /* TransactionDetailViewModel.swift */; };
@@ -36,7 +43,24 @@
 		46B1A12B2B91FEC8007D9903 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1A12A2B91FEC7007D9903 /* NetworkMonitor.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		46338F8D2B9730C30053B3B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46AED9382B909BA200FF239E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46AED93F2B909BA200FF239E;
+			remoteInfo = WorldOfPAYBACK;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		46338F892B9730C30053B3B6 /* WorldOfPAYBACKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldOfPAYBACKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46338F922B9731140053B3B6 /* TransactionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionServiceTests.swift; sourceTree = "<group>"; };
+		46338F952B973A0D0053B3B6 /* TransactionListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModelTests.swift; sourceTree = "<group>"; };
+		46338F972B9750EB0053B3B6 /* TransactionItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItemViewModelTests.swift; sourceTree = "<group>"; };
+		46338F992B9752C20053B3B6 /* MockModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModelProvider.swift; sourceTree = "<group>"; };
+		46338F9B2B9754CA0053B3B6 /* TransactionDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewModelTests.swift; sourceTree = "<group>"; };
+		46338F9F2B975C630053B3B6 /* MockTestURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTestURLSession.swift; sourceTree = "<group>"; };
 		4660D1E52B95A6BB003979E8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4660D1E82B95CB43003979E8 /* TransactionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewModel.swift; sourceTree = "<group>"; };
 		4660D1EC2B95EB7B003979E8 /* TransactionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItem.swift; sourceTree = "<group>"; };
@@ -68,6 +92,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		46338F862B9730C30053B3B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46AED93D2B909BA200FF239E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -79,6 +110,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46338F8A2B9730C30053B3B6 /* WorldOfPAYBACKTests */ = {
+			isa = PBXGroup;
+			children = (
+				46338F992B9752C20053B3B6 /* MockModelProvider.swift */,
+				46338F9F2B975C630053B3B6 /* MockTestURLSession.swift */,
+				46338F922B9731140053B3B6 /* TransactionServiceTests.swift */,
+				46338F952B973A0D0053B3B6 /* TransactionListViewModelTests.swift */,
+				46338F972B9750EB0053B3B6 /* TransactionItemViewModelTests.swift */,
+				46338F9B2B9754CA0053B3B6 /* TransactionDetailViewModelTests.swift */,
+			);
+			path = WorldOfPAYBACKTests;
+			sourceTree = "<group>";
+		};
 		4660D1E72B95A727003979E8 /* Codables */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				46AED9422B909BA200FF239E /* WorldOfPAYBACK */,
+				46338F8A2B9730C30053B3B6 /* WorldOfPAYBACKTests */,
 				46AED9412B909BA200FF239E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				46AED9402B909BA200FF239E /* WorldOfPAYBACK.app */,
+				46338F892B9730C30053B3B6 /* WorldOfPAYBACKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,12 +177,12 @@
 			isa = PBXGroup;
 			children = (
 				46AED9432B909BA200FF239E /* WorldOfPAYBACKApp.swift */,
-				467549242B9717AB00C79C42 /* Localizable.strings */,
 				4675491D2B9715E500C79C42 /* Views */,
 				46B1A1232B91C14A007D9903 /* ViewModels */,
 				46B1A1182B91B3E4007D9903 /* Models */,
 				46B1A1172B91AFB8007D9903 /* Network */,
 				4675491C2B97159600C79C42 /* Extensions */,
+				467549242B9717AB00C79C42 /* Localizable.strings */,
 				46AED9512B909CFC00FF239E /* MockData.json */,
 				46AED9472B909BA900FF239E /* Assets.xcassets */,
 				46AED9492B909BA900FF239E /* Preview Content */,
@@ -187,6 +233,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		46338F882B9730C30053B3B6 /* WorldOfPAYBACKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46338F8F2B9730C30053B3B6 /* Build configuration list for PBXNativeTarget "WorldOfPAYBACKTests" */;
+			buildPhases = (
+				46338F852B9730C30053B3B6 /* Sources */,
+				46338F862B9730C30053B3B6 /* Frameworks */,
+				46338F872B9730C30053B3B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46338F8E2B9730C30053B3B6 /* PBXTargetDependency */,
+			);
+			name = WorldOfPAYBACKTests;
+			productName = WorldOfPAYBACKTests;
+			productReference = 46338F892B9730C30053B3B6 /* WorldOfPAYBACKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		46AED93F2B909BA200FF239E /* WorldOfPAYBACK */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46AED94E2B909BA900FF239E /* Build configuration list for PBXNativeTarget "WorldOfPAYBACK" */;
@@ -217,6 +281,10 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					46338F882B9730C30053B3B6 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 46AED93F2B909BA200FF239E;
+					};
 					46AED93F2B909BA200FF239E = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -240,11 +308,20 @@
 			projectRoot = "";
 			targets = (
 				46AED93F2B909BA200FF239E /* WorldOfPAYBACK */,
+				46338F882B9730C30053B3B6 /* WorldOfPAYBACKTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		46338F872B9730C30053B3B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46338F942B9734960053B3B6 /* MockData.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46AED93E2B909BA200FF239E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -259,6 +336,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		46338F852B9730C30053B3B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46338F932B9731140053B3B6 /* TransactionServiceTests.swift in Sources */,
+				46338F962B973A0D0053B3B6 /* TransactionListViewModelTests.swift in Sources */,
+				46338F9A2B9752C20053B3B6 /* MockModelProvider.swift in Sources */,
+				46338F9C2B9754CA0053B3B6 /* TransactionDetailViewModelTests.swift in Sources */,
+				46338FA02B975C630053B3B6 /* MockTestURLSession.swift in Sources */,
+				46338F982B9750EC0053B3B6 /* TransactionItemViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46AED93C2B909BA200FF239E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,6 +380,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		46338F8E2B9730C30053B3B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46AED93F2B909BA200FF239E /* WorldOfPAYBACK */;
+			targetProxy = 46338F8D2B9730C30053B3B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		467549242B9717AB00C79C42 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
@@ -303,6 +401,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		46338F902B9730C30053B3B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = payback.WorldOfPAYBACKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorldOfPAYBACK.app/WorldOfPAYBACK";
+			};
+			name = Debug;
+		};
+		46338F912B9730C30053B3B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = payback.WorldOfPAYBACKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorldOfPAYBACK.app/WorldOfPAYBACK";
+			};
+			name = Release;
+		};
 		46AED94C2B909BA900FF239E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -480,6 +612,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		46338F8F2B9730C30053B3B6 /* Build configuration list for PBXNativeTarget "WorldOfPAYBACKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46338F902B9730C30053B3B6 /* Debug */,
+				46338F912B9730C30053B3B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		46AED93B2B909BA200FF239E /* Build configuration list for PBXProject "WorldOfPAYBACK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
