@@ -10,7 +10,6 @@
 		4660D1E42B92139A003979E8 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 4660D1E32B92139A003979E8 /* Reachability */; };
 		4660D1E62B95A6BC003979E8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660D1E52B95A6BB003979E8 /* Category.swift */; };
 		4660D1E92B95CB43003979E8 /* TransactionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660D1E82B95CB43003979E8 /* TransactionDetailViewModel.swift */; };
-		4660D1EB2B95D972003979E8 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660D1EA2B95D971003979E8 /* TestView.swift */; };
 		4660D1ED2B95EB7B003979E8 /* TransactionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660D1EC2B95EB7B003979E8 /* TransactionItem.swift */; };
 		4660D1EF2B95EBB1003979E8 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660D1EE2B95EBB1003979E8 /* TransactionDetailView.swift */; };
 		467549192B961C1000C79C42 /* DecimalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467549182B961C1000C79C42 /* DecimalExtension.swift */; };
@@ -39,7 +38,6 @@
 /* Begin PBXFileReference section */
 		4660D1E52B95A6BB003979E8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4660D1E82B95CB43003979E8 /* TransactionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewModel.swift; sourceTree = "<group>"; };
-		4660D1EA2B95D971003979E8 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		4660D1EC2B95EB7B003979E8 /* TransactionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItem.swift; sourceTree = "<group>"; };
 		4660D1EE2B95EBB1003979E8 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 		467549182B961C1000C79C42 /* DecimalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalExtension.swift; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 				4660D1EE2B95EBB1003979E8 /* TransactionDetailView.swift */,
 				4660D1EC2B95EB7B003979E8 /* TransactionItem.swift */,
 				46B1A1262B91D6FF007D9903 /* ErrorView.swift */,
-				4660D1EA2B95D971003979E8 /* TestView.swift */,
 				46B1A1232B91C14A007D9903 /* ViewModels */,
 				46B1A1182B91B3E4007D9903 /* Models */,
 				46B1A1172B91AFB8007D9903 /* Network */,
@@ -263,7 +260,6 @@
 				467549192B961C1000C79C42 /* DecimalExtension.swift in Sources */,
 				46B1A1122B90C83F007D9903 /* Errors.swift in Sources */,
 				46B1A1162B91AC85007D9903 /* TransactionService.swift in Sources */,
-				4660D1EB2B95D972003979E8 /* TestView.swift in Sources */,
 				46AED9442B909BA200FF239E /* WorldOfPAYBACKApp.swift in Sources */,
 				46B1A1202B91B409007D9903 /* Value.swift in Sources */,
 				46B1A1272B91D6FF007D9903 /* ErrorView.swift in Sources */,
