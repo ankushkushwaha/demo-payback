@@ -87,6 +87,27 @@
 			path = Codables;
 			sourceTree = "<group>";
 		};
+		4675491C2B97159600C79C42 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				46B1A1112B90C83F007D9903 /* Errors.swift */,
+				4675491A2B96DE2200C79C42 /* DateExtension.swift */,
+				467549182B961C1000C79C42 /* DecimalExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4675491D2B9715E500C79C42 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				46AED9452B909BA200FF239E /* TransactionListView.swift */,
+				4660D1EE2B95EBB1003979E8 /* TransactionDetailView.swift */,
+				4660D1EC2B95EB7B003979E8 /* TransactionItem.swift */,
+				46B1A1262B91D6FF007D9903 /* ErrorView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		46AED9372B909BA200FF239E = {
 			isa = PBXGroup;
 			children = (
@@ -107,16 +128,11 @@
 			isa = PBXGroup;
 			children = (
 				46AED9432B909BA200FF239E /* WorldOfPAYBACKApp.swift */,
-				46AED9452B909BA200FF239E /* TransactionListView.swift */,
-				4660D1EE2B95EBB1003979E8 /* TransactionDetailView.swift */,
-				4660D1EC2B95EB7B003979E8 /* TransactionItem.swift */,
-				46B1A1262B91D6FF007D9903 /* ErrorView.swift */,
+				4675491D2B9715E500C79C42 /* Views */,
 				46B1A1232B91C14A007D9903 /* ViewModels */,
 				46B1A1182B91B3E4007D9903 /* Models */,
 				46B1A1172B91AFB8007D9903 /* Network */,
-				46B1A1112B90C83F007D9903 /* Errors.swift */,
-				467549182B961C1000C79C42 /* DecimalExtension.swift */,
-				4675491A2B96DE2200C79C42 /* DateExtension.swift */,
+				4675491C2B97159600C79C42 /* Extensions */,
 				46AED9512B909CFC00FF239E /* MockData.json */,
 				46AED9472B909BA900FF239E /* Assets.xcassets */,
 				46AED9492B909BA900FF239E /* Preview Content */,
