@@ -27,12 +27,9 @@ struct TransactionListView: View {
             } else {
                 ZStack {
                     ListView(viewModel: viewModel)
-                    viewModel.isFiltering ? ProgressView() : nil
+                    viewModel.isSettingData ? ProgressView() : nil
                 }
             }
-        }
-        .task {
-            await viewModel.fetchTransactions()
         }
     }
 }

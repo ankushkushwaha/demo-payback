@@ -15,19 +15,23 @@ class TransactionListViewModel: ObservableObject {
     @Published var filteredItems: [TransactionItemViewModel] = []
     @Published var error: NetworkingError?
     @Published var isLoading = true
-    @Published var isFiltering = false
+    @Published var isSettingData = false
     
     @Published var totalAmount: Decimal = 0
     
     @Published var allCategories: [Category] = []
     @Published var selectedCategory: Category? {
         didSet {
-            updateFilteredData()
+            setDataForSelctedCategory()
         }
     }
     
     init(networkService: TransactionServiceProtocol = TransactionService(MockURLSession())) {
         self.networkService = networkService
+        
+        Task {
+            await fetchTransactions()
+        }
     }
     
     @MainActor
@@ -71,12 +75,12 @@ class TransactionListViewModel: ObservableObject {
         selectedCategory = allCategories.first
     }
     
-    private func updateFilteredData()  {
+    private func setDataForSelctedCategory()  {
         guard let selectedCategory = selectedCategory else {
             return
         }
         
-        isFiltering = true
+        isSettingData = true
         
         // Filter might be expensive for large data, perform in background
         DispatchQueue.global().async { [self] in
@@ -96,7 +100,7 @@ class TransactionListViewModel: ObservableObject {
             DispatchQueue.main.async {
                 self.filteredItems = filteredItems
                 self.totalAmount = amount
-                isFiltering = false
+                isSettingData = false
             }
         }
     }
