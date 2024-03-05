@@ -23,7 +23,7 @@ struct TransactionListView: View {
                 ProgressView("Loading...")
                     .padding()
             } else if let error = viewModel.error {
-                ErrorView(errorMessage: error.errorMessage)
+                ErrorViewWIthRefreshButton
             } else {
                 ZStack {
                     ListView(viewModel: viewModel)
@@ -33,6 +33,18 @@ struct TransactionListView: View {
         }
         .task {
             await viewModel.fetchTransactions()
+        }
+    }
+    
+    private var ErrorViewWIthRefreshButton: some View {
+        VStack {
+            ErrorView(errorMessage: viewModel.error?.errorMessage ?? "")
+                .padding()
+            Button("Refresh") {
+                Task {
+                    await viewModel.fetchTransactions()
+                }
+            }
         }
     }
 }
