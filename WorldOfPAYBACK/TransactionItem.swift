@@ -22,7 +22,7 @@ struct TransactionItem: View {
                     Text("\(viewModel.partnerDisplayName)")
                         .font(.callout)
                         .lineLimit(1)
-                   Spacer()
+                    Spacer()
                     Text("\(viewModel.description ?? "-")")
                         .font(.caption)
                 }
@@ -30,13 +30,13 @@ struct TransactionItem: View {
                 HStack(spacing: 10) {
                     
                     // amount might be in fractions, show prettyStringValue
-                    let amount = "\(String(describing: viewModel.amount.prettyStringValue ?? "-")) \(viewModel.currency)"
+                    let amount = "\(viewModel.amount.formatCurrencyString (viewModel.currency) ?? "-")"
                     
                     Text(amount)
                         .font(.callout)
                         .lineLimit(1)
                     Spacer()
-                    Text("\(viewModel.bookingDate)")
+                    Text("\(viewModel.bookingDate.formatDateAccordingToRegion)")
                         .font(.caption)
                 }
             }

@@ -8,28 +8,33 @@
 import Foundation
 
 extension Decimal {
-    var prettyStringValue: String? {
+    
+    func formatCurrencyString(_ currencyCode: String) -> String? {
+        Self.currencyFormatter.currencyCode = currencyCode
+        
+        return Self.currencyFormatter.string(from: self as NSDecimalNumber)
+    }
+    
+    var formattedNumberString: String? {
+        return Self.numberFormatter.string(from: self as NSDecimalNumber)
+    }
+}
+
+
+extension Decimal {
+    static let currencyFormatter: NumberFormatter = {
         let numberFormatter = NumberFormatter()
+        numberFormatter.locale = Locale.current
+        numberFormatter.numberStyle = .currency
+        numberFormatter.minimumFractionDigits = 1
+        return numberFormatter
+    }()
+    
+    static let numberFormatter: NumberFormatter = {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.locale = Locale.current
         numberFormatter.numberStyle = .decimal
         numberFormatter.minimumFractionDigits = 1
-        
-        if self < 0.0000001 {
-            numberFormatter.maximumFractionDigits = 9
-        } else if self < 0.000001 {
-            numberFormatter.maximumFractionDigits = 8
-        } else if self < 0.00001 {
-            numberFormatter.maximumFractionDigits = 7
-        } else if self < 0.0001 {
-            numberFormatter.maximumFractionDigits = 6
-        } else if self < 0.001 {
-            numberFormatter.maximumFractionDigits = 5
-        } else if self < 0.01 {
-            numberFormatter.maximumFractionDigits = 4
-        } else if self < 0.1 {
-            numberFormatter.maximumFractionDigits = 3
-        } else {
-            numberFormatter.maximumFractionDigits = 2
-        }
-        return numberFormatter.string(from: self as NSDecimalNumber)
-    }
+        return numberFormatter
+    }()
 }

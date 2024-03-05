@@ -94,7 +94,8 @@ struct ListView: View {
                 .font(.system(size: 26, weight: .regular, design: .default))
             
             Spacer()
-            let totalAmount = "\(viewModel.totalAmount)"
+            
+            let totalAmount = "\(viewModel.totalAmount.formattedNumberString ?? "-")"
             Text(totalAmount)
                 .font(.system(size: 26, weight: .bold, design: .default))
         }

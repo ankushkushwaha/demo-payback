@@ -14,6 +14,7 @@
 		4660D1ED2B95EB7B003979E8 /* TransactionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660D1EC2B95EB7B003979E8 /* TransactionItem.swift */; };
 		4660D1EF2B95EBB1003979E8 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660D1EE2B95EBB1003979E8 /* TransactionDetailView.swift */; };
 		467549192B961C1000C79C42 /* DecimalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467549182B961C1000C79C42 /* DecimalExtension.swift */; };
+		4675491B2B96DE2300C79C42 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4675491A2B96DE2200C79C42 /* DateExtension.swift */; };
 		46AED9442B909BA200FF239E /* WorldOfPAYBACKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AED9432B909BA200FF239E /* WorldOfPAYBACKApp.swift */; };
 		46AED9462B909BA200FF239E /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AED9452B909BA200FF239E /* TransactionListView.swift */; };
 		46AED9482B909BA900FF239E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46AED9472B909BA900FF239E /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		4660D1EC2B95EB7B003979E8 /* TransactionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItem.swift; sourceTree = "<group>"; };
 		4660D1EE2B95EBB1003979E8 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 		467549182B961C1000C79C42 /* DecimalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalExtension.swift; sourceTree = "<group>"; };
+		4675491A2B96DE2200C79C42 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		46AED9402B909BA200FF239E /* WorldOfPAYBACK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldOfPAYBACK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46AED9432B909BA200FF239E /* WorldOfPAYBACKApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPAYBACKApp.swift; sourceTree = "<group>"; };
 		46AED9452B909BA200FF239E /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				46B1A1172B91AFB8007D9903 /* Network */,
 				46B1A1112B90C83F007D9903 /* Errors.swift */,
 				467549182B961C1000C79C42 /* DecimalExtension.swift */,
+				4675491A2B96DE2200C79C42 /* DateExtension.swift */,
 				46AED9512B909CFC00FF239E /* MockData.json */,
 				46AED9472B909BA900FF239E /* Assets.xcassets */,
 				46AED9492B909BA900FF239E /* Preview Content */,
@@ -255,6 +258,7 @@
 				4660D1E92B95CB43003979E8 /* TransactionDetailViewModel.swift in Sources */,
 				46B1A1142B90CB9E007D9903 /* EndPoints.swift in Sources */,
 				46B1A1082B90C526007D9903 /* TransactionItemViewModel.swift in Sources */,
+				4675491B2B96DE2300C79C42 /* DateExtension.swift in Sources */,
 				4660D1ED2B95EB7B003979E8 /* TransactionItem.swift in Sources */,
 				467549192B961C1000C79C42 /* DecimalExtension.swift in Sources */,
 				46B1A1122B90C83F007D9903 /* Errors.swift in Sources */,
