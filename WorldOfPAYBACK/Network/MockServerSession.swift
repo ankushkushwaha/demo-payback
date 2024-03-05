@@ -21,7 +21,7 @@ struct MockURLSession: URLSessionProtocol {
     private func mockFetchData(url: URL) async throws -> (Data, URLResponse) {
         
         // simulate fake network delay
-        try await Task.sleep(nanoseconds: 2 * NSEC_PER_SEC)
+        try await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC)
 
         if let randomElement = (1...10).randomElement(),
            randomElement % 10 == 0 { // mock error
