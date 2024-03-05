@@ -35,6 +35,7 @@ class TransactionListViewModel: ObservableObject {
     @MainActor
     func fetchTransactions() async {
         isLoading = true
+        error = nil
         
         let result = await networkService.fetchTransactions()
         
