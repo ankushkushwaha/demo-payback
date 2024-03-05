@@ -20,11 +20,11 @@ struct TransactionItem: View {
             VStack(spacing: 10){
                 HStack(spacing: 10) {
                     Text("\(viewModel.partnerDisplayName)")
-                        .font(.callout)
+                        .font(.system(size: 16))
                         .lineLimit(1)
                     Spacer()
-                    Text("\(viewModel.description ?? "-")")
-                        .font(.caption)
+                    Text("\(viewModel.description ?? "")")
+                        .font(.system(size: 16))
                 }
                 
                 HStack(spacing: 10) {
@@ -33,11 +33,12 @@ struct TransactionItem: View {
                     let amount = "\(viewModel.amount.formatCurrencyString (viewModel.currency) ?? "-")"
                     
                     Text(amount)
-                        .font(.callout)
+                        .font(.system(size: 16).bold())
                         .lineLimit(1)
+                    
                     Spacer()
                     Text("\(viewModel.bookingDate.formatDateAccordingToRegion)")
-                        .font(.caption)
+                        .font(.system(size: 15))
                 }
             }
         }
