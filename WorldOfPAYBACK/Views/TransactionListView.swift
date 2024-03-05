@@ -112,7 +112,7 @@ struct ShadowCardModifier: ViewModifier {
 }
 
 
-struct ContentView_Previews: PreviewProvider {
+struct TransactionListView_Previews: PreviewProvider {
     static var previews: some View {
         TransactionListView(viewModel: TransactionListViewModel())
     }

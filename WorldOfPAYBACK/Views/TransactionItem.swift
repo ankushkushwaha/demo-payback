@@ -43,3 +43,34 @@ struct TransactionItem: View {
         }
     }
 }
+
+struct TransactionItem_Previews: PreviewProvider {
+    static var previews: some View {
+        
+        let jsonData = """
+                    {
+                      "partnerDisplayName" : "REWE Group",
+                      "alias" : {
+                        "reference" : "795357452000810"
+                      },
+                      "category" : 1,
+                      "transactionDetail" : {
+                        "description" : "Punkte sammeln",
+                        "bookingDate" : "2022-07-24T10:59:05+0200",
+                        "value" : {
+                          "amount" : 124,
+                          "currency" : "PBP"
+                        }
+                      }
+                    }
+                  """.data(using: .utf8)!
+        
+        
+        let decoder = JSONDecoder()
+        let model = try! decoder.decode(TransactionModel.self, from: jsonData)
+        
+        return TransactionItem(viewModel: TransactionItemViewModel(model))
+    }
+}
+
+

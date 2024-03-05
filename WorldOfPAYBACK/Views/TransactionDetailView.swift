@@ -21,3 +21,8 @@ struct TransactionDetailView: View {
     }
 }
 
+struct TransactionDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        TransactionDetailView(viewModel: TransactionDetailViewModel(displayName: "Name", description: "Description"))
+    }
+}
