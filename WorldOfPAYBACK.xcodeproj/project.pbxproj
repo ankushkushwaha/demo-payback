@@ -46,6 +46,7 @@
 		46B28B8B2B987E4D00D1667F /* TransactionSumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B28B8A2B987E4D00D1667F /* TransactionSumView.swift */; };
 		46B28B8D2B987EA500D1667F /* TransactionSumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B28B8C2B987EA500D1667F /* TransactionSumViewModel.swift */; };
 		46B28B8F2B98816B00D1667F /* TransactionSumViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B28B8E2B98816A00D1667F /* TransactionSumViewModelTests.swift */; };
+		46B28B912B98870000D1667F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 46B28B902B98870000D1667F /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		46B28B8A2B987E4D00D1667F /* TransactionSumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSumView.swift; sourceTree = "<group>"; };
 		46B28B8C2B987EA500D1667F /* TransactionSumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSumViewModel.swift; sourceTree = "<group>"; };
 		46B28B8E2B98816A00D1667F /* TransactionSumViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSumViewModelTests.swift; sourceTree = "<group>"; };
+		46B28B902B98870000D1667F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 		46AED9372B909BA200FF239E = {
 			isa = PBXGroup;
 			children = (
+				46B28B902B98870000D1667F /* README.md */,
 				46AED9422B909BA200FF239E /* WorldOfPAYBACK */,
 				46338F8A2B9730C30053B3B6 /* WorldOfPAYBACKTests */,
 				46AED9412B909BA200FF239E /* Products */,
@@ -353,6 +356,7 @@
 			files = (
 				46AED94B2B909BA900FF239E /* Preview Assets.xcassets in Resources */,
 				46338FA92B9866EF0053B3B6 /* MockData.json in Resources */,
+				46B28B912B98870000D1667F /* README.md in Resources */,
 				467549222B9717AB00C79C42 /* Localizable.strings in Resources */,
 				46AED9482B909BA900FF239E /* Assets.xcassets in Resources */,
 			);
