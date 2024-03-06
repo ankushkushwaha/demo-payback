@@ -12,7 +12,7 @@ The app fetches and shows list of transactions/payments made by user. User can f
 - Project is built on Xcode 13.2.1 , macOS 11.6.8
 
 - Xcode project is tested and worked well on iPhone Simulator iOS 15.2, macOS 11.6.8
-- 
+
 - Project is built by using Swift and supports iOS 15.2 and above.
 
 
