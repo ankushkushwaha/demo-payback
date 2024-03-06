@@ -28,8 +28,6 @@ struct TransactionItem: View {
                 }
                 
                 HStack(spacing: 10) {
-                    
-                    // amount might be in fractions, show prettyStringValue
                     let amount = "\(viewModel.amount.formatCurrencyString (viewModel.currency) ?? "-")"
                     
                     Text(amount)

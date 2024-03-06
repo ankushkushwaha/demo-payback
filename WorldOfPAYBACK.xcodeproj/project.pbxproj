@@ -14,6 +14,7 @@
 		46338F9A2B9752C20053B3B6 /* MockModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46338F992B9752C20053B3B6 /* MockModelProvider.swift */; };
 		46338F9C2B9754CA0053B3B6 /* TransactionDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46338F9B2B9754CA0053B3B6 /* TransactionDetailViewModelTests.swift */; };
 		46338FA02B975C630053B3B6 /* MockTestURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46338F9F2B975C630053B3B6 /* MockTestURLSession.swift */; };
+		46338FA22B977DDE0053B3B6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46338FA12B977DDE0053B3B6 /* Constants.swift */; };
 		4660D1E42B92139A003979E8 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 4660D1E32B92139A003979E8 /* Reachability */; };
 		4660D1E62B95A6BC003979E8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660D1E52B95A6BB003979E8 /* Category.swift */; };
 		4660D1E92B95CB43003979E8 /* TransactionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4660D1E82B95CB43003979E8 /* TransactionDetailViewModel.swift */; };
@@ -61,6 +62,7 @@
 		46338F992B9752C20053B3B6 /* MockModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModelProvider.swift; sourceTree = "<group>"; };
 		46338F9B2B9754CA0053B3B6 /* TransactionDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewModelTests.swift; sourceTree = "<group>"; };
 		46338F9F2B975C630053B3B6 /* MockTestURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTestURLSession.swift; sourceTree = "<group>"; };
+		46338FA12B977DDE0053B3B6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4660D1E52B95A6BB003979E8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4660D1E82B95CB43003979E8 /* TransactionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewModel.swift; sourceTree = "<group>"; };
 		4660D1EC2B95EB7B003979E8 /* TransactionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItem.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				46AED9432B909BA200FF239E /* WorldOfPAYBACKApp.swift */,
+				46338FA12B977DDE0053B3B6 /* Constants.swift */,
 				4675491D2B9715E500C79C42 /* Views */,
 				46B1A1232B91C14A007D9903 /* ViewModels */,
 				46B1A1182B91B3E4007D9903 /* Models */,
@@ -359,6 +362,7 @@
 				4660D1EF2B95EBB1003979E8 /* TransactionDetailView.swift in Sources */,
 				46AED9462B909BA200FF239E /* TransactionListView.swift in Sources */,
 				4660D1E62B95A6BC003979E8 /* Category.swift in Sources */,
+				46338FA22B977DDE0053B3B6 /* Constants.swift in Sources */,
 				46B1A1062B90C48E007D9903 /* TransactionListViewModel.swift in Sources */,
 				46B1A11F2B91B409007D9903 /* TransactionListModel.swift in Sources */,
 				46B1A11E2B91B409007D9903 /* TransactionModel.swift in Sources */,
@@ -567,6 +571,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -596,6 +601,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

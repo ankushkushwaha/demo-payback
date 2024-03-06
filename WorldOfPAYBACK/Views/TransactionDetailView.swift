@@ -12,10 +12,15 @@ struct TransactionDetailView: View {
     let viewModel: TransactionDetailViewModel
     
     var body: some View {
-        VStack {
-            Text("Partner Display Name: \(viewModel.partnerDisplayName)")
-            if let description = viewModel.description {
-                Text("Transaction Desctiption: \(description)")
+        ZStack {
+            Color(Constants.Colors.detailColor.rawValue)
+                .edgesIgnoringSafeArea(.all) // Ignore safe area if needed
+            
+            VStack {
+                Text("Partner Display Name: \(viewModel.partnerDisplayName)")
+                if let description = viewModel.description {
+                    Text("Transaction Desctiption: \(description)")
+                }
             }
         }
     }

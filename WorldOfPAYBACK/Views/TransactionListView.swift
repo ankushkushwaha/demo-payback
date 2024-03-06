@@ -22,8 +22,8 @@ struct TransactionListView: View {
             if viewModel.isLoading {
                 ProgressView("Loading...")
                     .padding()
-            } else if let error = viewModel.error {
-                ErrorViewWIthRefreshButton
+            } else if viewModel.error != nil {
+                ErrorViewWithRefreshButton
             } else {
                 ZStack {
                     ListView(viewModel: viewModel)
@@ -36,7 +36,7 @@ struct TransactionListView: View {
         }
     }
     
-    private var ErrorViewWIthRefreshButton: some View {
+    private var ErrorViewWithRefreshButton: some View {
         VStack {
             ErrorView(errorMessage: viewModel.error?.errorMessage ?? "")
                 .padding()
@@ -54,38 +54,38 @@ struct ListView: View {
     @ObservedObject var viewModel: TransactionListViewModel
     
     var body: some View {
-        
-        NavigationView {
-            VStack {
-                
-                CategorySelectionPicker
-                
-                List(viewModel.filteredItems, id: \.self) { itemViewModel in
-                    TransactionItem(viewModel: itemViewModel)
-                        .modifier(ShadowCardModifier())
-                        .listRowSeparator(.hidden)
+
+            NavigationView {
+               
+                VStack(spacing: 1) {
+                    
+                    CategorySelectionPicker
+                    
+                    List(viewModel.filteredItems, id: \.self) { itemViewModel in
+                        TransactionItem(viewModel: itemViewModel)
+                            .modifier(ShadowCardModifier())
+                            .listRowSeparator(.hidden)
+                    }
+                    .listStyle(.plain)
+                    
+                    TransactionSumView
                 }
-                .listStyle(.plain)
-                
-                TransactionSumView
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    HStack {
-                        Text("Transactions")
-                            .fontWeight(.bold)
-                            .font(.title)
-                        Spacer()
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        HStack {
+                            Text("Transactions")
+                                .fontWeight(.bold)
+                                .font(.title)
+                            Spacer()
+                        }
                     }
                 }
             }
-        }
     }
     
     private var CategorySelectionPicker: some View {
         HStack {
-            Spacer()
             Text("Choose Category: ")
             Picker("Choose Category: ", selection: $viewModel.selectedCategory) {
                 ForEach(viewModel.allCategories, id: \.self) { category in
@@ -97,22 +97,26 @@ struct ListView: View {
             .padding(.horizontal, 10)
             .border(.gray)
             .padding(.horizontal, 10)
+            
+            Spacer()
         }
+        .padding(.horizontal, 15)
+        .padding(.vertical, 8)
     }
     
     private var TransactionSumView: some View {
         HStack {
             Text("Total Amount: ")
-                .font(.system(size: 26, weight: .regular, design: .default))
+                .font(.system(size: 24, weight: .regular, design: .default))
             
             Spacer()
             
             let totalAmount = "\(viewModel.totalAmount?.formattedNumberString ?? "-")"
             Text(totalAmount)
-                .font(.system(size: 26, weight: .bold, design: .default))
+                .font(.system(size: 24, weight: .bold, design: .default))
         }
-        .padding()
-        .background(.brown)
+        .padding(10)
+        .background(Color(Constants.Colors.footerColor.rawValue))
     }
 }
 
@@ -120,9 +124,9 @@ struct ShadowCardModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding()
-            .background(Rectangle().fill(Color.white))
+            .background(Rectangle().fill(Color(Constants.Colors.listItemColor.rawValue)))
             .cornerRadius(10)
-            .shadow(color: .gray, radius: 3, x: 2, y: 2)
+            .shadow(color: .black, radius: 3, x: 2, y: 2)
     }
 }
 
