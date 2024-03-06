@@ -18,7 +18,7 @@ class TransactionItemViewModelTests: XCTestCase {
     }
     
     func testInit() {
-        guard let model = MockModelProvider().transactionModel() else {
+        guard let model = MockTestModelProvider().transactionModel() else {
             XCTFail("Could not get mock model")
             return
         }

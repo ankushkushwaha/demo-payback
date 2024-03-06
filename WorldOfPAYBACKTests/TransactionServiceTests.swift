@@ -27,8 +27,8 @@ class TransactionServiceTests: XCTestCase {
         case .success(let data):
             
             XCTAssertTrue(data.count > 0)
-            XCTAssertNotNil(data.first?.partnerDisplayName)
-            
+            XCTAssertEqual(data.first?.partnerDisplayName, "REWE Group")
+
         case .failure(let err):
             XCTFail("Could not fetch transactions \(err)")
         }

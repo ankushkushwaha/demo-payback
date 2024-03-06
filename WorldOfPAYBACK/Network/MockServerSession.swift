@@ -30,16 +30,19 @@ struct MockURLSession: URLSessionProtocol {
         
         let fakeSuccessResponse = HTTPURLResponse(url: url, statusCode: 200, httpVersion: "HTTP/1.1", headerFields: nil)
         
-        let mockData = fetchDataFromJSONFile()
+        let mockData = MockJsonData().getJsonData()
         
         guard let mockData = mockData,
               let response = fakeSuccessResponse else {
                   throw DataError.mockDataError
               }
         return (mockData, response)
-    }
-    
-    private func fetchDataFromJSONFile() -> Data? {
+    }    
+}
+
+
+struct MockJsonData {
+    func getJsonData() -> Data? {
         guard let fileURL = Bundle.main.url(forResource: "MockData", withExtension: "json") else {
             print("JSON file not found")
             return nil

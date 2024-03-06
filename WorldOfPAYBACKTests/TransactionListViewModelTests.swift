@@ -18,8 +18,7 @@ class TransactionListViewModelTests: XCTestCase {
     }
     
     func testFetchTransactionsSuccess() async {
-        let mockSession = MockTestURLSession()
-        let mockService = TransactionService(mockSession)
+        let mockService = MockTransactionService()
         
         sut = TransactionListViewModel(mockService)
         
@@ -36,12 +35,10 @@ class TransactionListViewModelTests: XCTestCase {
     }
     
     func testFetchTransactionsFail() async {
-        
-        var mockSession = MockTestURLSession()
-        mockSession.error = DataError.mockDataError
-        
-        let mockService = TransactionService(mockSession)
-        
+                
+        var mockService = MockTransactionService()
+        mockService.error = DataError.mockDataError
+
         sut = TransactionListViewModel(mockService)
         
         XCTAssertEqual(sut.isLoading, true)
@@ -56,8 +53,7 @@ class TransactionListViewModelTests: XCTestCase {
     }
     
     func testUpdateSelectedCategoryData() async {
-        let mockSession = MockTestURLSession()
-        let mockService = TransactionService(mockSession)
+        let mockService = MockTransactionService()
         
         sut = TransactionListViewModel(mockService)
         
@@ -75,5 +71,32 @@ class TransactionListViewModelTests: XCTestCase {
         
         XCTAssertEqual(sut.filteredItems.count, 1)
         XCTAssertEqual(sut.totalAmount, 86.0)
+    }
+}
+
+struct MockTransactionService: TransactionServiceProtocol {
+    var urlSession: URLSessionProtocol = MockURLSessionPlaceholder()
+
+    var error: Error?
+    
+    func fetchTransactions() async -> Result<[TransactionModel], Error> {
+        if let error = error {
+            return .failure(error)
+            
+        } else if let transactionModels = MockTestModelProvider().transactionModelArray() {
+            return .success(transactionModels)
+        }
+        
+        return .failure(NetworkingError.requestFailed(description: "Mock fetchTransactions request faield"))
+    }
+}
+
+struct MockURLSessionPlaceholder: URLSessionProtocol {
+    func data(_ url: URL) async throws -> (Data, URLResponse) {
+        fatalError("MockURLSessionPlaceHolder method called")
+    }
+    
+    func data(_ request: URLRequest) async throws -> (Data, URLResponse) {
+        fatalError("MockURLSessionPlaceHolder method called")
     }
 }

@@ -24,7 +24,7 @@ struct MockTestURLSession: URLSessionProtocol {
         
         let fakeSuccessResponse = HTTPURLResponse(url: url, statusCode: 200, httpVersion: "HTTP/1.1", headerFields: nil)
         
-        let mockData = fetchDataFromJSONFile()
+        let mockData = MockTestJsonData().getJsonData()
         
         guard let mockData = mockData,
               let response = fakeSuccessResponse else {
@@ -33,22 +33,9 @@ struct MockTestURLSession: URLSessionProtocol {
         return (mockData, response)
     }
     
-    private func fetchDataFromJSONFile() -> Data? {
-        guard let fileURL = Bundle.main.url(forResource: "MockData", withExtension: "json") else {
-            print("JSON file not found")
-            return nil
-        }
-        do {
-            let jsonData = try Data(contentsOf: fileURL)
-            return jsonData
-        } catch {
-            print("Error fething data from mock json file: \(error)")
-            return nil
-        }
-    }
-    
     func data(_ request: URLRequest) async throws -> (Data, URLResponse) {
         // write implementation if needed, at present we are not using it in mockServer
         fatalError("Method Implementation missing.")
     }
 }
+
