@@ -33,11 +33,11 @@ struct MockModelProvider {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             let decodedData = try decoder.decode(TransactionModel.self, from: data)
-           return decodedData
+            return decodedData
         } catch {
             print(error)
             return nil
         }
     }
- }
+}
 

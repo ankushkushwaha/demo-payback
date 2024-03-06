@@ -19,7 +19,7 @@ struct TransactionDetailView: View {
             VStack {
                 Text("Partner Display Name: \(viewModel.partnerDisplayName)")
                     .font(.system(size: 20, weight: .regular))
-
+                
                 if let description = viewModel.description {
                     Text("Transaction Desctiption: \(description)")
                         .font(.system(size: 20, weight: .regular))

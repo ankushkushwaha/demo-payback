@@ -54,34 +54,34 @@ struct ListView: View {
     @ObservedObject var viewModel: TransactionListViewModel
     
     var body: some View {
-
-            NavigationView {
-               
-                VStack(spacing: 1) {
-                    
-                    CategorySelectionPicker
-                    
-                    List(viewModel.filteredItems, id: \.self) { itemViewModel in
-                        TransactionItem(viewModel: itemViewModel)
-                            .modifier(ShadowCardModifier())
-                            .listRowSeparator(.hidden)
-                    }
-                    .listStyle(.plain)
-                    
-                    TransactionSumView
+        
+        NavigationView {
+            
+            VStack(spacing: 1) {
+                
+                CategorySelectionPicker
+                
+                List(viewModel.filteredItems, id: \.self) { itemViewModel in
+                    TransactionItem(viewModel: itemViewModel)
+                        .modifier(ShadowCardModifier())
+                        .listRowSeparator(.hidden)
                 }
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        HStack {
-                            Text("Transactions")
-                                .fontWeight(.bold)
-                                .font(.title)
-                            Spacer()
-                        }
+                .listStyle(.plain)
+                
+                TransactionSumView
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Text("Transactions")
+                            .fontWeight(.bold)
+                            .font(.title)
+                        Spacer()
                     }
                 }
             }
+        }
     }
     
     private var CategorySelectionPicker: some View {

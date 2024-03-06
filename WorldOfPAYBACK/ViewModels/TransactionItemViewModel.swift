@@ -15,7 +15,7 @@ struct TransactionItemViewModel: Hashable {
     let partnerDisplayName: String
     let bookingDate: Date
     let description: String?
-
+    
     init(_ model: TransactionModel) {
         self.amount = model.transactionDetail.value.amount
         self.category = model.category

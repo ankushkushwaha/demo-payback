@@ -26,14 +26,14 @@ struct TransactionService: TransactionServiceProtocol  {
         guard let url = URL(string: Endpoints.transactions) else {
             return .failure(NetworkingError.invalidURL)
         }
-                
+        
         do {
             let (data, _) = try await get(url)
             
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             let decodedData = try decoder.decode(TransactionListModel.self, from: data)
-           return .success(decodedData.items)
+            return .success(decodedData.items)
         } catch {
             return .failure(error)
         }

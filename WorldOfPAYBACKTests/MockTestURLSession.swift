@@ -16,20 +16,20 @@ struct MockTestURLSession: URLSessionProtocol {
         if let error = error {
             throw error
         }
-          
+        
         return try await mockFetchData(url: url)
     }
-        
+    
     private func mockFetchData(url: URL) async throws -> (Data, URLResponse) {
         
         let fakeSuccessResponse = HTTPURLResponse(url: url, statusCode: 200, httpVersion: "HTTP/1.1", headerFields: nil)
-
+        
         let mockData = fetchDataFromJSONFile()
         
         guard let mockData = mockData,
               let response = fakeSuccessResponse else {
-            throw DataError.mockDataError
-        }
+                  throw DataError.mockDataError
+              }
         return (mockData, response)
     }
     
