@@ -22,6 +22,8 @@
 
 - Project contains unit tests. Dependancy Injections are being used to mock data fetching for unit tests.
 
+- Project uses Swift Package Manager for third party dependencies.
+
 
 
 
