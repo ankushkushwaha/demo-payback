@@ -2,7 +2,7 @@
 //  DataProvider.swift
 //  WorldOfPAYBACK
 //
-//  Created by ankush kushwaha on 29/02/24.
+//  Created by ankush kushwaha
 //
 
 import Foundation
