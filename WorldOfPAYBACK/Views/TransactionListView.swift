@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TransactionListView: View {
-    @StateObject var networkMonitor: NetworkMonitor
+    @ObservedObject var networkMonitor: NetworkMonitor
     @ObservedObject var viewModel: TransactionListViewModel
     
     var body: some View {
@@ -26,7 +26,7 @@ struct TransactionListView: View {
                 ErrorViewWithRefreshButton
             } else {
                 ZStack {
-                    ListView(viewModel: viewModel)
+                    ListWithPickerAndSumView
                     viewModel.isSettingData ? ProgressView() : nil
                 }
             }
@@ -47,12 +47,8 @@ struct TransactionListView: View {
             }
         }
     }
-}
-
-
-struct ListView: View {
-    @ObservedObject var viewModel: TransactionListViewModel
-    var body: some View {
+    
+    private var ListWithPickerAndSumView: some View {
         
         NavigationView {
             
@@ -104,6 +100,7 @@ struct ListView: View {
         .padding(.vertical, 8)
     }
 }
+
 
 struct ShadowCardModifier: ViewModifier {
     func body(content: Content) -> some View {

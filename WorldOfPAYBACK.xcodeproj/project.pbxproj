@@ -172,8 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				46AED9452B909BA200FF239E /* TransactionListView.swift */,
-				4660D1EE2B95EBB1003979E8 /* TransactionDetailView.swift */,
 				4660D1EC2B95EB7B003979E8 /* TransactionItemView.swift */,
+				4660D1EE2B95EBB1003979E8 /* TransactionDetailView.swift */,
 				46B28B8A2B987E4D00D1667F /* TransactionSumView.swift */,
 				46B1A1262B91D6FF007D9903 /* ErrorView.swift */,
 			);
@@ -250,9 +250,9 @@
 		46B1A1232B91C14A007D9903 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				46B1A1052B90C48E007D9903 /* TransactionListViewModel.swift */,
 				46B1A1072B90C526007D9903 /* TransactionItemViewModel.swift */,
 				4660D1E82B95CB43003979E8 /* TransactionDetailViewModel.swift */,
-				46B1A1052B90C48E007D9903 /* TransactionListViewModel.swift */,
 				46B28B8C2B987EA500D1667F /* TransactionSumViewModel.swift */,
 			);
 			path = ViewModels;

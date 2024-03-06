@@ -8,7 +8,6 @@
 import Foundation
 
 struct TransactionItemViewModel: Hashable {
-    let id = UUID()
     let currency: String
     let amount: Decimal
     let amountString: String?
