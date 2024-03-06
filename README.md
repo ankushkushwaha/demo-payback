@@ -1,3 +1,11 @@
+## Transactions list App
+
+The app fetches and shows list of transactions/payments made by user. User can filter transactions by categories.
+
+## Preview
+
+![Alt Text](preview.gif)
+
 
 ### Development Environment
 
@@ -7,8 +15,6 @@
 
 
 ### Project Information
-
-- Project shows list of transactions/payments made by user. User can filter transactions according to categories. 
 
 - App can be localised for different languages in future. At present localizations for English and German languages are added.
 
@@ -20,7 +26,7 @@
 
 - Project uses Swift concurrency for multithreading.
 
-- Project contains unit tests. Dependancy Injections are being used to mock data fetching for unit tests.
+- Project contains unit tests. Dependancy Injections are being used to mock network data for unit tests.
 
 - Project uses Swift Package Manager for third party dependencies.
 
