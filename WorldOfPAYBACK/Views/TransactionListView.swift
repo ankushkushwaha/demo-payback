@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TransactionListView: View {
-    @StateObject private var networkMonitor = NetworkMonitor()
+    @StateObject var networkMonitor: NetworkMonitor
     @ObservedObject var viewModel: TransactionListViewModel
     
     var body: some View {
@@ -118,7 +118,7 @@ struct ListView: View {
                 .lineLimit(1)
         }
         .padding(10)
-        .background(Color(Constants.Colors.footerColor.rawValue))
+        .background(Color(Constants.Colors.footerColor.name))
     }
 }
 
@@ -126,7 +126,7 @@ struct ShadowCardModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding()
-            .background(Rectangle().fill(Color(Constants.Colors.listItemColor.rawValue)))
+            .background(Rectangle().fill(Color(Constants.Colors.listItemColor.name)))
             .cornerRadius(10)
             .shadow(color: .gray, radius: 3, x: 2, y: 2)
     }
@@ -135,6 +135,6 @@ struct ShadowCardModifier: ViewModifier {
 
 struct TransactionListView_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionListView(viewModel: TransactionListViewModel())
+        TransactionListView(networkMonitor: NetworkMonitor(), viewModel: TransactionListViewModel())
     }
 }

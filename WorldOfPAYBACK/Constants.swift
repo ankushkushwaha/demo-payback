@@ -9,9 +9,20 @@ import Foundation
 
 struct Constants {
     
-    enum Colors: String {
-        case listItemColor = "listItemColor"
-        case footerColor = "footerColor"
-        case detailColor = "detailColor"
+    enum Colors {
+        case listItemColor
+        case footerColor
+        case detailColor
+        
+        var name: String {
+            switch self {
+            case .listItemColor:
+                return "listItemColor"
+            case .footerColor:
+                return "footerColor"
+            case .detailColor:
+                return "detailColor"
+            }
+        }
     }
 }

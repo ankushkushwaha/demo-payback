@@ -13,7 +13,7 @@ struct TransactionDetailView: View {
     
     var body: some View {
         ZStack {
-            Color(Constants.Colors.detailColor.rawValue)
+            Color(Constants.Colors.detailColor.name)
                 .edgesIgnoringSafeArea(.all) // Ignore safe area if needed
             
             VStack {

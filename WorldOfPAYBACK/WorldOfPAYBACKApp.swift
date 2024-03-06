@@ -14,8 +14,9 @@ struct WorldOfPAYBACKApp: App {
         WindowGroup {
             
             let mockService = TransactionService(MockURLSession())
-            //Inject fake server into viewModel
-            TransactionListView(viewModel: TransactionListViewModel(mockService))
+            //Inject mock service into viewModel
+            TransactionListView(networkMonitor: NetworkMonitor(),
+                                viewModel: TransactionListViewModel(mockService))
         }
     }
 }
