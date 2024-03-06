@@ -28,5 +28,8 @@ class TransactionItemViewModelTests: XCTestCase {
         XCTAssertEqual(sut.partnerDisplayName, "REWE Group")
         XCTAssertEqual(sut.category, 1)
         XCTAssertEqual(sut.amount, 124)
+        XCTAssertEqual(sut.bookingDateString, sut.bookingDate.formatDateAccordingToRegion)
+        XCTAssertEqual(sut.amountString, sut.amount.formatCurrencyString(sut.currency))
+
     }
 }

@@ -52,7 +52,6 @@ struct TransactionListView: View {
 
 struct ListView: View {
     @ObservedObject var viewModel: TransactionListViewModel
-    
     var body: some View {
         
         NavigationView {
@@ -62,13 +61,13 @@ struct ListView: View {
                 CategorySelectionPicker
                 
                 List(viewModel.filteredItems, id: \.self) { itemViewModel in
-                    TransactionItem(viewModel: itemViewModel)
+                    TransactionItemView(viewModel: itemViewModel)
                         .modifier(ShadowCardModifier())
                         .listRowSeparator(.hidden)
                 }
                 .listStyle(.plain)
                 
-                TransactionSumView
+                TransactionSumView(viewModel: TransactionSumViewModel(amount: viewModel.totalAmount))
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -103,22 +102,6 @@ struct ListView: View {
         }
         .padding(.horizontal, 15)
         .padding(.vertical, 8)
-    }
-    
-    private var TransactionSumView: some View {
-        HStack {
-            Text("Total Amount: ")
-                .font(.system(size: 24, weight: .regular, design: .default))
-            
-            Spacer()
-            
-            let totalAmount = "\(viewModel.totalAmount?.formattedNumberString ?? "-")"
-            Text(totalAmount)
-                .font(.system(size: 24, weight: .bold, design: .default))
-                .lineLimit(1)
-        }
-        .padding(10)
-        .background(Color(Constants.Colors.footerColor.name))
     }
 }
 

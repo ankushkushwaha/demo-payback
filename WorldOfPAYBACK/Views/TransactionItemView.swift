@@ -1,5 +1,5 @@
 //
-//  TransactionItem.swift
+//  TransactionItemView.swift
 //  WorldOfPAYBACK
 //
 //  Created by ankush kushwaha
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TransactionItem: View {
+struct TransactionItemView: View {
     let viewModel: TransactionItemViewModel
     
     var body: some View {
@@ -27,15 +27,13 @@ struct TransactionItem: View {
                         .font(.system(size: 16))
                 }
                 
-                HStack(spacing: 10) {
-                    let amount = "\(viewModel.amount.formatCurrencyString (viewModel.currency) ?? "-")"
-                    
-                    Text(amount)
+                HStack(spacing: 10) {                    
+                    Text(viewModel.amountString ?? "-")
                         .font(.system(size: 16).bold())
                         .lineLimit(1)
                     
                     Spacer()
-                    Text("\(viewModel.bookingDate.formatDateAccordingToRegion)")
+                    Text("\(viewModel.bookingDateString)")
                         .font(.system(size: 15))
                 }
             }
@@ -68,7 +66,7 @@ struct TransactionItem_Previews: PreviewProvider {
         let decoder = JSONDecoder()
         let model = try! decoder.decode(TransactionModel.self, from: jsonData)
         
-        return TransactionItem(viewModel: TransactionItemViewModel(model))
+        return TransactionItemView(viewModel: TransactionItemViewModel(model))
     }
 }
 
