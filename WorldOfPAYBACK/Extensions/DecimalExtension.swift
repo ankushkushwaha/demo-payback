@@ -26,7 +26,6 @@ extension Decimal {
         let numberFormatter = NumberFormatter()
         numberFormatter.locale = Locale.current
         numberFormatter.numberStyle = .currency
-        numberFormatter.minimumFractionDigits = 1
         return numberFormatter
     }()
     
@@ -34,7 +33,6 @@ extension Decimal {
         let numberFormatter = NumberFormatter()
         numberFormatter.locale = Locale.current
         numberFormatter.numberStyle = .decimal
-        numberFormatter.minimumFractionDigits = 1
         return numberFormatter
     }()
 }

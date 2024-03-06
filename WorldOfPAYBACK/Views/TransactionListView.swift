@@ -87,6 +87,7 @@ struct ListView: View {
     private var CategorySelectionPicker: some View {
         HStack {
             Text("Choose Category: ")
+                .font(.system(size: 20, weight: .regular))
             Picker("Choose Category: ", selection: $viewModel.selectedCategory) {
                 ForEach(viewModel.allCategories, id: \.self) { category in
                     Text("\(category.categoryName)").tag(Category?.some(category))
@@ -114,6 +115,7 @@ struct ListView: View {
             let totalAmount = "\(viewModel.totalAmount?.formattedNumberString ?? "-")"
             Text(totalAmount)
                 .font(.system(size: 24, weight: .bold, design: .default))
+                .lineLimit(1)
         }
         .padding(10)
         .background(Color(Constants.Colors.footerColor.rawValue))
