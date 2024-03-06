@@ -18,7 +18,6 @@ protocol NetworkServiceProtocol {
 
 extension NetworkServiceProtocol {
     func get(_ request: URL) async throws -> (Data, URLResponse) {
-        let (data, urlResponse) = try await urlSession.data(request)
-        return (data, urlResponse)
+        try await urlSession.data(request)
     }
 }
