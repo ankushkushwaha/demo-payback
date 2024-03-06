@@ -126,7 +126,7 @@ struct ShadowCardModifier: ViewModifier {
             .padding()
             .background(Rectangle().fill(Color(Constants.Colors.listItemColor.rawValue)))
             .cornerRadius(10)
-            .shadow(color: .black, radius: 3, x: 2, y: 2)
+            .shadow(color: .gray, radius: 3, x: 2, y: 2)
     }
 }
 
